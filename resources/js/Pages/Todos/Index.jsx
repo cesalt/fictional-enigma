@@ -15,8 +15,6 @@ export default function Index({ auth, todos }) {
         post(route('todos.store'), { onSuccess: () => reset() });
     };
  
-    console.log(data)
-
     return (
         <AuthenticatedLayout user={auth.user}>
             <Head title="IRE Todo List" />
@@ -30,7 +28,7 @@ export default function Index({ auth, todos }) {
                         onChange={e => setData('message', e.target.value)}
                     ></textarea>
                     <InputError message={errors.message} className="mt-2" />
-                    <PrimaryButton className="mt-4" disabled={processing}>Add to your IRE Todo List</PrimaryButton>
+                    <PrimaryButton className="mt-4" disabled={processing}>Add to the Team's Todo List</PrimaryButton>
                 </form>
                 <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
                     {todos.map(todo =>
